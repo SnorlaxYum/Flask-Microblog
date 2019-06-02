@@ -1,0 +1,12 @@
+__pycache__
+.git
+venv
+app.db
+.pylintrc
+flask-microblog-venv
+migrations
+.build-tools.cson
+.flaskenv
+__pycache__/
+*.py[cod]
+*$py.class
