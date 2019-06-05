@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<table valign="top">
+  <tr>
+    <td><img src="{{user.avatar(124)}}"></td>
+    <td><h1>{{ user.username }}'s Profile</h1></td>
+  </tr>
+    {% if user.last_seen %}<tr><td><b>Last seen: </b></td><td>{{user.last_seen}}</td></tr>{% endif %}
+    {% if user.about_me %}<tr><td><b>About me:</b> </td><td>{{user.about_me}}</td></tr>{%endif%}
+  </tr>
+</table>
+{% if user == current_user %}
+<a href="{{url_for('edit_profile')}}">Edit Your Profile</a>
+{% endif %}
+<hr>
+{% for post in user.posts %}
+{% include "_post.html" %}
+{% endfor %}
+{% endblock %}
